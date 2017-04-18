@@ -61,12 +61,169 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.configstore">module configstore</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.configstore.configstore">
+            function <span class="apidocSignatureSpan"></span>configstore
+            <span class="apidocSignatureSpan">(id, defaults, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.configstore.toString">
+            function <span class="apidocSignatureSpan">configstore.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.configstore.toString">module configstore.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.configstore.toString.toString">
+            function <span class="apidocSignatureSpan">configstore.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.configstore" id="apidoc.module.configstore">module configstore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.configstore.configstore" id="apidoc.element.configstore.configstore">
+        function <span class="apidocSignatureSpan"></span>configstore
+        <span class="apidocSignatureSpan">(id, defaults, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class Configstore {
+	constructor(id, defaults, opts) {
+		opts = opts || {};
+
+		const pathPrefix = opts.globalConfigPath ?
+			path.join(id, &#x27;config.json&#x27;) :
+			path.join(&#x27;configstore&#x27;, `${id}.json`);
+
+		this.path = path.join(configDir, pathPrefix);
+		this.all = Object.assign({}, defaults, this.all);
+	}
+	get all() {
+		try {
+			return JSON.parse(fs.readFileSync(this.path, &#x27;utf8&#x27;));
+		} catch (err) {
+			// Create dir if it doesn&#x27;t exist
+			if (err.code === &#x27;ENOENT&#x27;) {
+				mkdirp.sync(path.dirname(this.path), defaultPathMode);
+				return {};
+			}
+
+			// Improve the message of permission errors
+			if (err.code === &#x27;EACCES&#x27;) {
+				err.message = `${err.message}\n${permissionError}\n`;
+			}
+
+			// Empty the file if it encounters invalid JSON
+			if (err.name === &#x27;SyntaxError&#x27;) {
+				writeFileAtomic.sync(this.path, &#x27;&#x27;, writeFileOptions);
+				return {};
+			}
+
+			throw err;
+		}
+	}
+	set all(val) {
+		try {
+			// Make sure the folder exists as it could have been deleted in the meantime
+			mkdirp.sync(path.dirname(this.path), defaultPathMode);
+
+			writeFileAtomic.sync(this.path, JSON.stringify(val, null, &#x27;\t&#x27;), writeFileOptions);
+		} catch (err) {
+			// Improve the message of permission errors
+			if (err.code === &#x27;EACCES&#x27;) {
+				err.message = `${err.message}\n${permissionError}\n`;
+			}
+
+			throw err;
+		}
+	}
+	get size() {
+		return Object.keys(this.all || {}).length;
+	}
+	get(key) {
+		return dotProp.get(this.all, key);
+	}
+	set(key, val) {
+		const config = this.all;
+
+		if (arguments.length === 1) {
+			for (const k of Object.keys(key)) {
+				dotProp.set(config, k, key[k]);
+			}
+		} else {
+			dotProp.set(config, key, val);
+		}
+
+		this.all = config;
+	}
+	has(key) {
+		return dotProp.has(this.all, key);
+	}
+	delete(key) {
+		const config = this.all;
+		dotProp.delete(config, key);
+		this.all = config;
+	}
+	clear() {
+		this.all = {};
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.configstore.toString" id="apidoc.element.configstore.toString">
+        function <span class="apidocSignatureSpan">configstore.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.configstore.toString" id="apidoc.module.configstore.toString">module configstore.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.configstore.toString.toString" id="apidoc.element.configstore.toString.toString">
+        function <span class="apidocSignatureSpan">configstore.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
