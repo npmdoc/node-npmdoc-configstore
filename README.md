@@ -1,9 +1,14 @@
-# api documentation for  [configstore (v3.0.0)](https://github.com/yeoman/configstore#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-configstore.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-configstore) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-configstore.svg)](https://travis-ci.org/npmdoc/node-npmdoc-configstore)
+# npmdoc-configstore
+
+#### api documentation for  [configstore (v3.0.0)](https://github.com/yeoman/configstore#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-configstore.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-configstore) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-configstore.svg)](https://travis-ci.org/npmdoc/node-npmdoc-configstore)
+
 #### Easily load and save config without having to think about where and how
 
-[![NPM](https://nodei.co/npm/configstore.png?downloads=true)](https://www.npmjs.com/package/configstore)
+[![NPM](https://nodei.co/npm/configstore.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/configstore)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-configstore/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-configstore_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-configstore/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-configstore/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-configstore/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-configstore/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-configstore/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-configstore/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "Sindre Sorhus",
-        "email": "sindresorhus@gmail.com",
         "url": "sindresorhus.com"
     },
     "bugs": {
@@ -67,33 +71,26 @@
     "license": "BSD-2-Clause",
     "maintainers": [
         {
-            "name": "sindresorhus",
-            "email": "sindresorhus@gmail.com"
+            "name": "sindresorhus"
         },
         {
-            "name": "addyosmani",
-            "email": "addyosmani@gmail.com"
+            "name": "addyosmani"
         },
         {
-            "name": "passy",
-            "email": "phartig@rdrei.net"
+            "name": "passy"
         },
         {
-            "name": "sboudrias",
-            "email": "admin@simonboudrias.com"
+            "name": "sboudrias"
         },
         {
-            "name": "eddiemonge",
-            "email": "eddie+npm@eddiemonge.com"
+            "name": "eddiemonge"
         },
         {
-            "name": "arthurvr",
-            "email": "contact@arthurverschaeve.be"
+            "name": "arthurvr"
         }
     ],
     "name": "configstore",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/yeoman/configstore.git"
@@ -104,16 +101,6 @@
     "version": "3.0.0"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module configstore](#apidoc.module.configstore)
-
-
-
-# <a name="apidoc.module.configstore"></a>[module configstore](#apidoc.module.configstore)
 
 
 
