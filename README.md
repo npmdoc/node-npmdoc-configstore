@@ -1,6 +1,6 @@
 # npmdoc-configstore
 
-#### api documentation for  [configstore (v3.0.0)](https://github.com/yeoman/configstore#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-configstore.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-configstore) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-configstore.svg)](https://travis-ci.org/npmdoc/node-npmdoc-configstore)
+#### basic api documentation for  [configstore (v3.0.0)](https://github.com/yeoman/configstore#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-configstore.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-configstore) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-configstore.svg)](https://travis-ci.org/npmdoc/node-npmdoc-configstore)
 
 #### Easily load and save config without having to think about where and how
 
@@ -98,7 +98,8 @@
     "scripts": {
         "test": "xo && ava"
     },
-    "version": "3.0.0"
+    "version": "3.0.0",
+    "bin": {}
 }
 ```
 
